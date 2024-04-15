@@ -5,26 +5,22 @@ import mvc.Model;
 import java.util.*;
 
 public class Simulation extends Model {
-    ArrayList<Agent> agents;
-
-        transient private Timer timer; // timers aren't serializable
-        private int clock = 0;
-
-        private void startTimer() {
+    public ArrayList<Agent> agents;
+    transient private Timer timer; // timers aren't serializable
+    private int clock = 0;
+    private void startTimer() {
             timer = new Timer();
             timer.scheduleAtFixedRate(new ClockUpdater(), 1000, 1000);
+    }
+    private class ClockUpdater extends TimerTask {
+        public void run() {
+            clock++;
         }
-
-        private void stopTimer() {
-            timer.cancel();
-            timer.purge();
-        }
-
-        private class ClockUpdater extends TimerTask {
-            public void run() {
-                clock++;
-            }
-        }
+    }
+    private void stopTimer() {
+        timer.cancel();
+        timer.purge();
+    }
     public void start(){}
 
     public void suspend(){}
@@ -34,7 +30,18 @@ public class Simulation extends Model {
     public void stop(){}
 
     public Agent getNeighbor(Agent a, Double radius){
-            return null;
+        boolean found = false;
+        int i = (int) Math.floor(Math.random() * agents.size());
+        while(!found) {
+            i++;
+            if(i >= agents.size()) {i = 0;}
+            int xDiff = a.xc - agents.get(i).xc;
+            int yDiff = a.yc - agents.get(i).yc;
+            if(Math.sqrt(xDiff * xDiff + yDiff * yDiff) <= radius && !a.equals(agents.get(i))){
+            found = true;
+            }
+        }
+            return agents.get(i);
     }
 
     public void addAgent(Agent agent){

@@ -2,9 +2,8 @@ package mvc;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
-import java.io.File;
+import java.io.*;
 import java.util.Random;
-
 public class Utilities {
 
     // asks user a yes/no question

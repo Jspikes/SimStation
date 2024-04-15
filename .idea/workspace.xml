@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f353f48-36b8-4041-8272-59118e340dcd" name="Changes" comment="Base framework">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SimStation/Heading.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SimStation/RandomWalk/Drunk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SimStation/SimFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SimStation/SimPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SimStation/SimView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SimStation/plague/Plague.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SimStation/plague/PlagueFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SimStation/plague/PlaguePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SimStation/plague/PlagueView.java" afterDir="false" />
+    <list default="true" id="6f353f48-36b8-4041-8272-59118e340dcd" name="Changes" comment="Fleshing out the simulation code, starting to start to build plague customization, and a few fixes to leftover MVC code">
+      <change afterPath="$PROJECT_DIR$/src/SimStation/RandomWalk/RandomWalkFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SimStation/RandomWalk/RandomWalkSimulation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SimStation/plague/Peasant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimStation/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimStation/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SimStation/RandomWalk/Drunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimStation/RandomWalk/Drunk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SimStation/SimFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimStation/SimFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SimStation/SimPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimStation/SimPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimStation/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimStation/Simulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mvc/AppPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SimStation/plague/Plague.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimStation/plague/Plague.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mvc/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mvc/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/Utilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mvc/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,22 +52,59 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Plague.executor": "Run",
+    "Application.RandomWalkSimulation.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Plague",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/acesp/IdeaProjects/SimStation/src",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\acesp\IdeaProjects\SimStation\src" />
     </key>
+  </component>
+  <component name="RunManager" selected="Application.RandomWalkSimulation">
+    <configuration name="Plague" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SimStation.plague.Plague" />
+      <module name="SimStation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SimStation.plague.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RandomWalkSimulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SimStation.RandomWalk.RandomWalkSimulation" />
+      <module name="SimStation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SimStation.RandomWalk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.RandomWalkSimulation" />
+        <item itemvalue="Application.Plague" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -96,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713118649340</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fleshing out the simulation code, starting to start to build plague customization, and a few fixes to leftover MVC code">
+      <option name="closed" value="true" />
+      <created>1713201835433</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713201835433</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,6 +154,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Base framework" />
-    <option name="LAST_COMMIT_MESSAGE" value="Base framework" />
+    <MESSAGE value="Fleshing out the simulation code, starting to start to build plague customization, and a few fixes to leftover MVC code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fleshing out the simulation code, starting to start to build plague customization, and a few fixes to leftover MVC code" />
   </component>
 </project>

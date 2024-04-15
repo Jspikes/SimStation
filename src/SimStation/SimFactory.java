@@ -13,7 +13,6 @@ public class SimFactory implements AppFactory {
     public Model makeModel() {
         return new Simulation();
     }
-
     public View makeView(Model model) {
         return new SimView(model);
     }

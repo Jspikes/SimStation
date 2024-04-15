@@ -1,4 +1,4 @@
-package randomwalk;
+package SimStation.RandomWalk;
 
 import mvc.*;
 import SimStation.*;
@@ -16,26 +16,6 @@ class Drunk extends Agent {
         heading = Heading.random();
         int steps = Utilities.rng.nextInt(10) + 1;
         move(steps);
-    }
-
-}
-
-
-class RandomWalkFactory extends SimFactory {
-    public Model makeModel() { return new RandomWalkSimulation(); }
-    public String getTitle() { return "Random Walks";}
-}
-
-public class RandomWalkSimulation extends Simulation {
-
-    public void populate() {
-        for(int i = 0; i < 15; i++)
-            addAgent(new Drunk());
-    }
-
-    public static void main(String[] args) {
-        AppPanel panel = new SimPanel(new RandomWalkFactory());
-        panel.display();
     }
 
 }
