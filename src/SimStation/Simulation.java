@@ -34,8 +34,12 @@ public class Simulation extends Model {
     public void stop(){}
 
     public Agent getNeighbor(Agent a, Double radius){
-
+            return null;
     }
 
+    public void addAgent(Agent agent){
+            agents.add(agent);
+            notifySubscribers();
+    }
     public void populate(){}
 }

@@ -4,4 +4,6 @@ import java.io.Serializable;
 
 public abstract class Model extends Publisher implements Serializable {
 
+    public void changed() {
+    }
 }

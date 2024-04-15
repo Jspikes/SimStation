@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public abstract class Agent implements Serializable, Runnable {
     public Simulation world;
-
     public String name;
     public Heading heading;
     public int xc;
