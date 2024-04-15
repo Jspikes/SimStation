@@ -1,9 +1,10 @@
 package SimStation;
 
+import mvc.*;
 import java.io.Serializable;
 
 public abstract class Agent implements Serializable, Runnable {
-    public Simulation world;
+    protected Simulation world;
 
     public String name;
     public Heading heading;
