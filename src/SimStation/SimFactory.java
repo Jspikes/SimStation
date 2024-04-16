@@ -1,7 +1,5 @@
 package SimStation;
 
-import SimStation.plague.Plague;
-import SimStation.plague.PlagueView;
 import mvc.AppFactory;
 import mvc.Command;
 import mvc.Model;

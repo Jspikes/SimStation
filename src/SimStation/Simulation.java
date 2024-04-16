@@ -32,14 +32,16 @@ public class Simulation extends Model {
     public Agent getNeighbor(Agent a, Double radius){
         boolean found = false;
         int i = (int) Math.floor(Math.random() * agents.size());
+        int count = 0;
         while(!found) {
             i++;
+            count++;
             if(i >= agents.size()) {i = 0;}
             int xDiff = a.xc - agents.get(i).xc;
             int yDiff = a.yc - agents.get(i).yc;
-            if(Math.sqrt(xDiff * xDiff + yDiff * yDiff) <= radius && !a.equals(agents.get(i))){
-            found = true;
-            }
+            double rad = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+            if(rad <= radius && !a.equals(agents.get(i))){ found = true; }
+            if(count >= agents.size()) { return null; }
         }
             return agents.get(i);
     }

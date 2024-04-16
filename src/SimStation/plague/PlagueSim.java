@@ -5,8 +5,18 @@ import SimStation.SimPanel;
 import SimStation.Simulation;
 import mvc.AppPanel;
 
-public class Plague extends Simulation {
-    int clock;
+import java.util.Timer;
+
+public class PlagueSim extends Simulation {
+    int clock = 0;
+    public static int INFECTED = 10;
+    public static int VIRULENCE = 50;
+    public static double RANGE = 10.0;
+    public static int RESISTANCE = 2;
+
+    public synchronized void update(){
+
+    }
     public void populate() {
         for(int i = 0; i < 50; i++)
             addAgent(new Peasant());
@@ -15,6 +25,8 @@ public class Plague extends Simulation {
         for(Agent a: agents) {
             a.start();
         }
+        clock++;
+        notifyAll();
     }
 
         public static void main(String[] args) {
