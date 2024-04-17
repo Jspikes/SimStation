@@ -1,18 +1,19 @@
 package SimStation;
 
+import java.util.Random;
+
 public class Heading {
-    public int degrees;
-
-
-    public Heading(){
-        degrees = 0;
+    public enum Cardinals {
+        NORTH, SOUTH, EAST, WEST;
     }
-    public Heading(int degrees){
-        this.degrees = degrees;
+    public Cardinals direction;
+
+    public Heading(int x){
+        direction = Cardinals.values()[x];
     }
 
     public static Heading random(){
-        Heading heading = new Heading((int)Math.floor(Math.random() * 360));
-        return heading;
+        int x = new Random().nextInt(Cardinals.values().length);
+        return new Heading(x);
     }
 }

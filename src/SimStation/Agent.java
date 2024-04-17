@@ -8,9 +8,9 @@ public abstract class Agent implements Serializable, Runnable {
     public Heading heading;
     public int xc;
     public int yc;
-    public boolean suspended;
+    public boolean suspended = false;
     public boolean stopped = false;
-    public Thread myThread;
+    transient protected Thread myThread;
     
     public void run(){}
     public void start(){}
@@ -19,6 +19,10 @@ public abstract class Agent implements Serializable, Runnable {
     public void stop(){}
     public abstract void update();
 
-    public void move(int steps){}
+    public void move(int steps){
+    }
+    public void onStart(){}
+    public void onInterrupted(){}
+    public void onExit(){}
 
 }

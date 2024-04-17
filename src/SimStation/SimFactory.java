@@ -1,7 +1,5 @@
 package SimStation;
 
-import SimStation.plague.Plague;
-import SimStation.plague.PlagueView;
 import mvc.AppFactory;
 import mvc.Command;
 import mvc.Model;
@@ -13,7 +11,6 @@ public class SimFactory implements AppFactory {
     public Model makeModel() {
         return new Simulation();
     }
-
     public View makeView(Model model) {
         return new SimView(model);
     }

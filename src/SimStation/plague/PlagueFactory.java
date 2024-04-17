@@ -1,9 +1,6 @@
 package SimStation.plague;
 
 import SimStation.SimFactory;
-import SimStation.Simulation;
-import mvc.AppFactory;
-import mvc.Command;
 import mvc.Model;
 import mvc.View;
 
@@ -11,7 +8,7 @@ import java.util.ArrayList;
 
 public class PlagueFactory extends SimFactory {
     public Model makeModel() {
-        return new Plague();
+        return new PlagueSim();
     }
 
     public View makeView(Model model) {
