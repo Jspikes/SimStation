@@ -26,7 +26,6 @@ public abstract class Agent implements Serializable, Runnable {
     public void setManager(Simulation m) { world = m; }
 
     public void start(){
-        stopped=false;
         suspended=false;
         Thread thread=new Thread(this);
         thread.start();
