@@ -6,12 +6,13 @@ import SimStation.Heading;
 public class Peasant extends Agent {
     public PlagueSim world;
     public boolean infected = false;
+    public boolean immune = false;
     @Override
     public void update() {
         move(5);
         Peasant p = (Peasant) world.getNeighbor(this, world.RANGE);
         if(p == null) {return;}
-        if(!infected && p.infected) {
+        if(!infected&& !immune && p.infected) {
             if (d100() <= world.VIRULENCE) {
                 if(d100() >= world.RESISTANCE){
                     infected = true;
@@ -60,11 +61,19 @@ public class Peasant extends Agent {
             yc += yMove;
             world.changed();
             stepsTaken++;
+            try {
+                Thread.sleep(20);
+            } catch(InterruptedException e){
+                System.out.println(e);
+            }
         }
     }
 
     public void onStart() {
-        if (d100() <= world.INFECTED) {
+        if(d100() <= world.RESISTANCE){
+            immune = true;
+        }
+        if (!immune && d100() <= world.INFECTED) {
             infected = true;
         }
     }
