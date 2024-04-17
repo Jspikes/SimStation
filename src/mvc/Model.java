@@ -5,7 +5,6 @@ import java.io.Serializable;
 public abstract class Model extends Publisher implements Serializable {
     String fName;
     boolean changes;
-
     public void changed(){
         notifySubscribers();
     }
